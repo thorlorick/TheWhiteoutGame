@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://crctk2iqepjem"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_evuwq"]
+radius = 53.037724
+
+[node name="PersonalSpace" type="Area2D" unique_id=568930324]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=289309838]
+shape = SubResource("CircleShape2D_evuwq")
+debug_color = Color(0.7882353, 0.69411767, 0.08627451, 0.6156863)

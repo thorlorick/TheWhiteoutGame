@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://fqch7gostal2"]
+
+[ext_resource type="PackedScene" uid="uid://bl7aj5cb3sbxp" path="res://scenes/hero_animations.tscn" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://xugjpvxboy1o" path="res://scripts/enemyScripts/hurtbox_component.gd" id="6_tuyoq"]
+[ext_resource type="Script" uid="uid://byrbh5cextebe" path="res://scripts/enemyScripts/health_component.gd" id="7_fjrip"]
+[ext_resource type="Script" uid="uid://ba48asdi1ja7n" path="res://scripts/enemyScripts/knockback_component.gd" id="9_ur7pv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
+radius = 7.0
+height = 26.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qlg0r"]
+size = Vector2(15, 25)
+
+[node name="Player" type="CharacterBody2D" unique_id=239320486 groups=["player"]]
+motion_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=520417503]
+shape = SubResource("CapsuleShape2D_g2els")
+
+[node name="HeroAnimations" parent="." unique_id=244050914 instance=ExtResource("1_3vyb7")]
+
+[node name="HurtboxComponent" type="Area2D" parent="." unique_id=1997501626]
+collision_layer = 2
+script = ExtResource("6_tuyoq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" unique_id=1041968144]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_qlg0r")
+debug_color = Color(0.716519, 0.41517657, 0.025157366, 0.41960785)
+
+[node name="HealthComponent" type="Node" parent="." unique_id=1797924171]
+script = ExtResource("7_fjrip")
+
+[node name="KnockbackComponent" type="Node" parent="." unique_id=2046811497]
+script = ExtResource("9_ur7pv")

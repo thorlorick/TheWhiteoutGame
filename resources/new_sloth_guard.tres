@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="PersonalityResource" format=3 uid="uid://k0uc1e3r5k0y"]
+
+[ext_resource type="Script" uid="uid://f5c1vij2unkf" path="res://scripts/enemyScripts/personality_resource.gd" id="1_drw71"]
+
+[resource]
+script = ExtResource("1_drw71")
+metadata/_custom_type_script = "uid://f5c1vij2unkf"

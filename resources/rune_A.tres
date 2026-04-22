@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="RuneData" format=3 uid="uid://dsdyu1w4ohmux"]
+
+[ext_resource type="Texture2D" uid="uid://2fgixelb5pth" path="res://assets/images/runes/rune_A.jpeg" id="1_0lode"]
+[ext_resource type="Script" uid="uid://des5t250hcc1w" path="res://scripts/rune_data.gd" id="1_p14qi"]
+
+[resource]
+script = ExtResource("1_p14qi")
+rune_name = "rune_A"
+icon = ExtResource("1_0lode")
+description = "the letter A"
+metadata/_custom_type_script = "uid://des5t250hcc1w"
