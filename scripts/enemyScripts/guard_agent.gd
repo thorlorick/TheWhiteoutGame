@@ -92,8 +92,8 @@ func _connect_signals() -> void:
 	chase_component.move_to.connect(_on_chase_move_to)
 	chase_component.target_lost.connect(_on_chase_target_lost)
 
-	combat_meter.combat_entered.connect(_on_combat_entered)
-	combat_meter.combat_lost.connect(_on_combat_lost)
+	combat_meter.meter_full.connect(_on_combat_entered)
+	combat_meter.meter_empty.connect(_on_combat_lost)
 
 	health_component.hit.connect(_on_hit_received)
 	health_component.died.connect(_on_died)
@@ -109,6 +109,8 @@ func _connect_signals() -> void:
 
 	vision_component.target_spotted.connect(_on_target_spotted)
 	vision_component.target_lost.connect(_on_target_lost)
+	vision_component.target_distance_updated.connect(_on_target_distance_updated)
+
 
 # -----------------------------------------------------------------------------
 # REFLEX SIGNALS
@@ -209,15 +211,28 @@ func _get_urge_state() -> String:
 # _replan
 # -----------------------------------------------------------------------------
 func _replan() -> void:
+	print(">>> WORLD STATE CHECK:")
+	print("    in_range: %s" % world_state.get_state("in_range"))
+	print("    meter_is_full: %s" % world_state.get_state("meter_is_full"))
+	print("    sees_target: %s" % world_state.get_state("sees_target"))
+	print("    threat_nearby: %s" % world_state.get_state("threat_nearby"))
 	var best_goal = planner.get_best_goal(goals.goals, _current_goal_name)
+	
 	if planner.is_goal_satisfied(best_goal, world_state):
+		print(">>> REPLAN: goal already satisfied: %s" % best_goal["name"])  # NEW
 		return
+		
 	var best_action = planner.get_best_action(best_goal, actions.actions, world_state)
+	
 	if best_action.is_empty():
+		print(">>> REPLAN: no valid action found for goal: %s" % best_goal["name"])  # NEW
 		return
+		
 	if best_action["name"] == planner.current_action_name and best_goal["name"] == _current_goal_name:
+		print(">>> REPLAN: already doing best action: %s" % best_action["name"])  # NEW
 		return
-	_current_goal_name          = best_goal["name"]
+		
+	_current_goal_name = best_goal["name"]
 	planner.current_action_name = best_action["name"]
 	print(">>> REPLAN — goal: %s | action: %s" % [best_goal["name"], best_action["name"]])
 	_on_best_chosen_action(best_action)
@@ -323,14 +338,13 @@ func _on_target_spotted(target_body: Node2D, intensity: float) -> void:
 	if not world_state.get_state("sees_target"):
 		world_state.set_state("sees_target", true)
 		world_state.set_state("known_target", target_body)
-		
 		urge.on_target_spotted()
 		reflex.on_target_spotted()
 		combat_meter.add_to_meter(intensity)
 		_replan()
+		
 	_last_known_position = target_body.global_position
 	_last_known_direction = (target_body.global_position - global_position).normalized()
-	
 	world_state.set_state("last_known_position", _last_known_position)
 	
 func _on_target_lost(last_known_pos: Vector2) -> void:
@@ -351,6 +365,7 @@ func _on_target_lost(last_known_pos: Vector2) -> void:
 # COMBAT METER HANDLERS
 # -----------------------------------------------------------------------------
 func _on_combat_entered() -> void:
+	print(">>> COMBAT ENTERED HANDLER FIRED") 
 	world_state.set_state("meter_is_full", true)
 	_replan()
 

@@ -84,6 +84,7 @@ func _check_thresholds(delta: float) -> void:
 			_is_full = true
 			print(">>> COMBAT METER: full")
 			meter_full.emit()
+			print(">>> COMBAT METER: meter_full signal emitted")
 		return
 
 	# meter dropped below full

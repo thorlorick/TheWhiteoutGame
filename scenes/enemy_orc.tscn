@@ -18,6 +18,7 @@
 [ext_resource type="Script" uid="uid://xugjpvxboy1o" path="res://scripts/enemyScripts/hurtbox_component.gd" id="13_swnw2"]
 [ext_resource type="Script" uid="uid://ba48asdi1ja7n" path="res://scripts/enemyScripts/knockback_component.gd" id="15_ut45h"]
 [ext_resource type="PackedScene" uid="uid://crctk2iqepjem" path="res://scenes/personal_space.tscn" id="18_pd8mg"]
+[ext_resource type="Script" uid="uid://d4c26ourohq8h" path="res://scripts/enemyScripts/personal_space.gd" id="20_1h2fr"]
 [ext_resource type="Script" uid="uid://cq767qnya4yh1" path="res://scripts/enemyScripts/combat_meter_component.gd" id="20_vckl6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ex7a3"]
@@ -201,7 +202,7 @@ states/walk/position = Vector2(512.6667, -31.368423)
 states/walk_attack/node = SubResource("AnimationNodeBlendSpace2D_1h2fr")
 states/walk_attack/position = Vector2(335.33334, -60.286964)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_il4x8"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_7rfrs"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_swnw2"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_4f07r"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_ocsdt"), "walk", "run", SubResource("AnimationNodeStateMachineTransition_ex7a3"), "run", "walk", SubResource("AnimationNodeStateMachineTransition_pd8mg"), "walk", "walk_attack", SubResource("AnimationNodeStateMachineTransition_1yk7k"), "walk_attack", "idle", SubResource("AnimationNodeStateMachineTransition_vckl6"), "run", "run_attack", SubResource("AnimationNodeStateMachineTransition_1h2fr"), "run_attack", "idle", SubResource("AnimationNodeStateMachineTransition_j7nab")]
-graph_offset = Vector2(0, 71.70409)
+graph_offset = Vector2(0, 10.293976)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_il4x8"]
 
@@ -276,7 +277,6 @@ body = NodePath("..")
 
 [node name="SpeedComponent" type="Node" parent="." unique_id=1475648298]
 script = ExtResource("8_vckl6")
-base_speed = 5.0
 run_speed = 80.0
 
 [node name="KnockbackComponent" type="Node" parent="." unique_id=1531630033]
@@ -318,3 +318,4 @@ debug_color = Color(0.9831539, 0.10557165, 0.19346508, 0.41960785)
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=329260611]
 
 [node name="PersonalSpace" parent="." unique_id=568930324 instance=ExtResource("18_pd8mg")]
+script = ExtResource("20_1h2fr")

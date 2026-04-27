@@ -54,7 +54,7 @@ var actions: Array = [
 		"name":          "Attack",
 		"cost":          1.0,
 		"preconditions": {"in_range": true, "meter_is_full": true},
-		"effects":       {"danger_cleared": true}
+		"effects":       {"danger_cleared": true, "sees_target": false}
 	},
 	{
 		"name":          "HoldGround",

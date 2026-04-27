@@ -1,7 +1,7 @@
 class_name SpeedComponent
 extends Node
 
-@export var base_speed: float = 20.0
+@export var base_speed: float = 10.0
 @export var chase_speed: float = 30.0
 @export var run_speed: float = 40.0
 

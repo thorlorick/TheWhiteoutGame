@@ -91,6 +91,7 @@ func _cast_rays(delta: float) -> void:
 		# 2. Proximity: 1.0 if touching, 0.0 at the tip of the ray
 		var dist      = body.global_position.distance_to(seen_body.global_position)
 		target_distance_updated.emit(dist)
+		
 		var proximity = clamp(1.0 - (dist / ray_length), 0.0, 1.0)
 
 		# 3. Final intensity: combined score
