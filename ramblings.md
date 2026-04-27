@@ -82,3 +82,6 @@ It's been officially 2 months since we started this journey, and we have learned
 
 # April 20, 2026
 I have discovered that trying to build in two locations is difficult. That's it.
+
+# April 27, 2026
+This whole time, I have been trying to get back to where the orc swings his sword when the attack conditions are met...he just did it again, for walk attack down...thank the almighty, because if he didn't, I was putting him on the retirement list. My god, this is insanely complex trying to keep track of all the signals, and wiring, and firing...it really is impressive when you play a game after seeing how hard it is to actually do this. NOW, there are probably some hacks and addons I'm not using, or maybe Unreal has more features, but I'm good...this is where I should be. Off to wire some more attacks...oh, but don't worry, he can't run anymore...GRRRRRRR!!!!!
