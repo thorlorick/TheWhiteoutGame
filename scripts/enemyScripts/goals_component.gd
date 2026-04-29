@@ -23,7 +23,7 @@ var goals: Array = [
 	},
 	{
 		"name":          "ClearDanger",
-		"desired_state": {"danger_cleared": true, "sees_target": false},  
+		"desired_state": {"danger_cleared": true},  
 		"priority":      0.0
 	},
 ]

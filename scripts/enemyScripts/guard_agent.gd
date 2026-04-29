@@ -400,7 +400,7 @@ func _on_attack_hit_frame() -> void:
 func _on_attack_animation_finished() -> void:
 	hitbox_component.deactivate()
 	attack.on_attack_finished()
-	animation.on_attack_finished()
+	animation.on_attack_finished() 
 	combat_fsm.change_state(CombatFSMComponent.State.READY)
 	_replan()
 
