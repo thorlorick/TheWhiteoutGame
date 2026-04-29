@@ -88,3 +88,4 @@ This whole time, I have been trying to get back to where the orc swings his swor
 
 # April 29, 2026
 I've just discovered that you can use the animatedsprite to build the animations and then just call the frames from the player. SO MUCH EASIER than trying to work with a screwed up sprite sheet in animation player. I can set the frames and then they are ready to go. Still working on the attack sequence, but this opens up many more enemy opportunities.
+Really need to get an art style nailed down, or maybe not...I think I have an idea. I need Mike Valiquette!!!!
