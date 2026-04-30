@@ -41,6 +41,7 @@ var _state: Dictionary = {
 
 	# --- guard condition ----------------------------------------------------
 	"is_injured":            false,
+	"curiosity_high":		false,
 
 }
 
