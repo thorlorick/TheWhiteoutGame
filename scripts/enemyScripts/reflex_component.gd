@@ -12,7 +12,6 @@ signal interrupt_movement_stopped
 signal interrupt_patrol_stopped
 signal interrupt_search_stopped
 signal interrupt_speed_reset
-signal interrupt_run_started
 signal interrupt_chase_stopped
 signal interrupt_attack_started
 signal interrupt_attack_stopped
