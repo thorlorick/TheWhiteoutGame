@@ -24,8 +24,8 @@ var actions: Array = [
 	},
 	{
 		"name":          "Heal",
-		"cost":          1.2,
-		"preconditions": {"is_injured": true},
+		"cost":          1.0,
+		"preconditions": {"is_injured": true, "threat_nearby": false},
 		"effects":       {"is_safe": true}
 	},
 
