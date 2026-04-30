@@ -230,6 +230,19 @@ func _tick_run_state(is_hunting: bool) -> void:
 		ai_move_component.set_running(false)
 
 # -----------------------------------------------------------------------------
+# _tick_curiosity_state
+# If curiosity is high enough, the guard chases
+# Personality determines how quickly curiosity builds, so chase vs search threshold
+# is reached faster on curious guards.
+# -----------------------------------------------------------------------------
+
+func _tick_curiosity_state() -> void:
+    if urge.get_curiosity_urge() >= 0.5:
+        world_state.set_state("curiosity_high", true)
+    else:
+        world_state.set_state("curiosity_high", false)
+
+# -----------------------------------------------------------------------------
 # _replan
 # -----------------------------------------------------------------------------
 func _replan() -> void:
