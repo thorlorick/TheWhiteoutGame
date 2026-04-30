@@ -20,17 +20,6 @@ signal interrupt_hurt_started
 signal interrupt_death_started
 
 # -----------------------------------------------------------------------------
-# on_danger_entered — threat is too close, chase must start now
-# doesn't wait for the planner
-# -----------------------------------------------------------------------------
-func on_danger_entered() -> void:
-	print(">>> REFLEX: danger entered — interrupt chase start")
-	interrupt_patrol_stopped.emit()
-	interrupt_search_stopped.emit()
-	interrupt_run_started.emit()
-	interrupt_chase_started.emit()
-
-# -----------------------------------------------------------------------------
 # on_target_spotted — eyes locked on, stop everything else
 # -----------------------------------------------------------------------------
 func on_target_spotted() -> void:
