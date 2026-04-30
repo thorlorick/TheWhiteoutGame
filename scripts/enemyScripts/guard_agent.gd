@@ -103,6 +103,8 @@ func _connect_signals() -> void:
 	knockback_component.knockback_finished.connect(_on_knockback_finished)
 
 	patrol_component.new_patrol_target.connect(_on_new_patrol_target)
+	patrol_component.at_post_started.connect(_on_at_post_started)
+	patrol_component.at_post_ended.connect(_on_at_post_ended)
 
 	search_component.search_move_to.connect(_on_search_move_to)
 	search_component.search_finished.connect(_on_search_finished)
@@ -478,6 +480,12 @@ func _on_chase_target_lost() -> void:
 	world_state.set_state("sees_target", false)
 	reflex.on_chase_target_lost()
 	_replan()
+
+func _on_at_post_started() -> void:
+	world_state.set_state("at_post", true)
+
+func _on_at_post_ended() -> void:
+	world_state.set_state("at_post", false)
 
 # -----------------------------------------------------------------------------
 # REFLEX HANDLERS
