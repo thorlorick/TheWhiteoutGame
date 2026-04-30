@@ -186,9 +186,11 @@ func _tick_in_range() -> void:
 	var target = world_state.get_state("known_target")
 	if target == null:
 		world_state.set_state("in_range", false)
+		world_state.set_state("threat_nearby", false)
 		return
 	var dist = global_position.distance_to(target.global_position)
 	world_state.set_state("in_range", dist <= personality.attack_range)
+	world_state.set_state("threat_nearby", personal_space.is_player_inside())
 
 # -----------------------------------------------------------------------------
 # _get_urge_state
