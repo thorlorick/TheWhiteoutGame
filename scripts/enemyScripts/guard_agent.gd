@@ -140,6 +140,7 @@ func _setup_animation() -> void:
 func _process(delta: float) -> void:
 	_tick_combat_meter(delta)
 	_tick_in_range()
+	_tick_curiosity_state()
 
 	var guard_state: String = _get_urge_state()
 	urge.tick(delta, guard_state)
@@ -193,28 +194,6 @@ func _tick_in_range() -> void:
 	world_state.set_state("threat_nearby", personal_space.is_player_inside())
 
 # -----------------------------------------------------------------------------
-# _get_urge_state
-# -----------------------------------------------------------------------------
-func _get_urge_state() -> String:
-	if world_state.get_state("meter_is_full"):
-		_tick_run_state(false)
-		return "fighting"
-	if world_state.get_state("sees_target"):
-		_tick_run_state(true)
-		return "hunting"
-	if world_state.get_state("threat_nearby"):
-		_tick_run_state(false)
-		return "threatened"
-	if world_state.get_state("target_lost"):
-		_tick_run_state(false)
-		return "working"
-	if world_state.get_state("at_home"):
-		_tick_run_state(false)
-		return "safe"
-	_tick_run_state(false)
-	return "working"
-
-# -----------------------------------------------------------------------------
 # _tick_run_state
 # If hunting and curiosity is high enough, the guard runs.
 # Personality determines how quickly curiosity builds, so run threshold
@@ -241,6 +220,28 @@ func _tick_curiosity_state() -> void:
         world_state.set_state("curiosity_high", true)
     else:
         world_state.set_state("curiosity_high", false)
+
+# -----------------------------------------------------------------------------
+# _get_urge_state
+# -----------------------------------------------------------------------------
+func _get_urge_state() -> String:
+	if world_state.get_state("meter_is_full"):
+		_tick_run_state(false)
+		return "fighting"
+	if world_state.get_state("sees_target"):
+		_tick_run_state(true)
+		return "hunting"
+	if world_state.get_state("threat_nearby"):
+		_tick_run_state(false)
+		return "threatened"
+	if world_state.get_state("target_lost"):
+		_tick_run_state(false)
+		return "working"
+	if world_state.get_state("at_home"):
+		_tick_run_state(false)
+		return "safe"
+	_tick_run_state(false)
+	return "working"
 
 # -----------------------------------------------------------------------------
 # _replan
