@@ -122,7 +122,6 @@ func _connect_reflex_signals() -> void:
 	reflex.interrupt_search_stopped.connect(_on_reflex_search_stopped)
 	reflex.interrupt_movement_stopped.connect(_on_reflex_movement_stopped)
 	reflex.interrupt_speed_reset.connect(_on_reflex_speed_reset)
-	reflex.interrupt_run_started.connect(_on_reflex_run_started)
 	reflex.interrupt_attack_started.connect(_on_reflex_attack_started)
 	reflex.interrupt_attack_stopped.connect(_on_reflex_attack_stopped)
 	reflex.interrupt_hurt_started.connect(_on_reflex_hurt_started)
@@ -232,11 +231,6 @@ func _tick_run_state(is_hunting: bool) -> void:
 # _replan
 # -----------------------------------------------------------------------------
 func _replan() -> void:
-	print(">>> WORLD STATE CHECK:")
-	print("    in_range: %s" % world_state.get_state("in_range"))
-	print("    meter_is_full: %s" % world_state.get_state("meter_is_full"))
-	print("    sees_target: %s" % world_state.get_state("sees_target"))
-	print("    threat_nearby: %s" % world_state.get_state("threat_nearby"))
 	var best_goal = planner.get_best_goal(goals.goals, _current_goal_name)
 	
 	if planner.is_goal_satisfied(best_goal, world_state):
