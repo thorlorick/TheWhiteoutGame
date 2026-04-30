@@ -333,7 +333,6 @@ func _on_best_chosen_action(action: Dictionary) -> void:
 			chase_component.stop_chase()
 			patrol_component.stop()
 			ai_move_component.stop()
-			world_state.set_state("threat_nearby", true)
 			_hold_ground_timer = randf_range(0.0, 3.0)
 
 		"Search":
