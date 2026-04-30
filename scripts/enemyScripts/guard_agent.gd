@@ -196,16 +196,37 @@ func _tick_in_range() -> void:
 # -----------------------------------------------------------------------------
 func _get_urge_state() -> String:
 	if world_state.get_state("meter_is_full"):
+		_tick_run_state(false)
 		return "fighting"
 	if world_state.get_state("sees_target"):
+		_tick_run_state(true)
 		return "hunting"
 	if world_state.get_state("threat_nearby"):
+		_tick_run_state(false)
 		return "threatened"
 	if world_state.get_state("target_lost"):
+		_tick_run_state(false)
 		return "working"
 	if world_state.get_state("at_home"):
+		_tick_run_state(false)
 		return "safe"
+	_tick_run_state(false)
 	return "working"
+
+# -----------------------------------------------------------------------------
+# _tick_run_state
+# If hunting and curiosity is high enough, the guard runs.
+# Personality determines how quickly curiosity builds, so run threshold
+# is reached faster on curious guards.
+# -----------------------------------------------------------------------------
+func _tick_run_state(is_hunting: bool) -> void:
+	if not is_hunting:
+		ai_move_component.set_running(false)
+		return
+	if urge.get_curiosity_urge() >= 0.8:
+		ai_move_component.set_running(true)
+	else:
+		ai_move_component.set_running(false)
 
 # -----------------------------------------------------------------------------
 # _replan
