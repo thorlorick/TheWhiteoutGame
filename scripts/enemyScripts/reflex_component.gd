@@ -31,7 +31,7 @@ func on_danger_entered() -> void:
 	interrupt_chase_started.emit()
 
 # -----------------------------------------------------------------------------
-# on_target_spotted — eyes just locked on, stop everything else
+# on_target_spotted — eyes locked on, stop everything else
 # -----------------------------------------------------------------------------
 func on_target_spotted() -> void:
 	print(">>> REFLEX: target spotted — drop everything, start chase")
