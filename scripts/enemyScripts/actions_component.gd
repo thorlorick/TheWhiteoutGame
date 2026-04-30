@@ -75,5 +75,11 @@ var actions: Array = [
 		"cost":          1.0,
 		"preconditions": {"target_lost": true},
 		"effects":       {"unknown_resolved": true}
+	},
+	{
+	    "name":          "ChaseAsUnknown",
+	    "cost":          1.2,
+	    "preconditions": {"target_lost": true, "sees_target": false},
+	    "effects":       {"unknown_resolved": true}
 	}
 ]
