@@ -45,8 +45,9 @@ func set_target(pos: Vector2) -> void:
 
 # -----------------------------------------------------------------------------
 func set_speed(value: float) -> void:
+	if value != speed:
+		print(">>> SPEED SET: %.1f" % speed)
 	speed = value
-	print(">>> SPEED SET: %.1f" % speed)
 
 # -----------------------------------------------------------------------------
 func set_running(value: bool) -> void:

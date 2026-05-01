@@ -143,6 +143,7 @@ func _process(delta: float) -> void:
 	_tick_combat_meter(delta)
 	_tick_in_range()
 	_tick_curiosity_state()
+	_tick_run_state()
 
 	var guard_state: String = _get_urge_state()
 	urge.tick(delta, guard_state)
@@ -197,17 +198,16 @@ func _tick_in_range() -> void:
 
 # -----------------------------------------------------------------------------
 # _tick_run_state
-# If hunting and curiosity is high enough, the guard runs.
+# If curiosity is high enough, the guard runs.
 # Personality determines how quickly curiosity builds, so run threshold
 # is reached faster on curious guards.
 # -----------------------------------------------------------------------------
-func _tick_run_state(is_hunting: bool) -> void:
-	if not is_hunting:
-		ai_move_component.set_running(false)
-		return
-	if urge.get_curiosity_urge() >= 0.8:
+func _tick_run_state() -> void:
+	if urge.get_curiosity_urge() >= 0.2:
+		ai_move_component.set_speed(speed_component.get_run_speed())
 		ai_move_component.set_running(true)
 	else:
+		ai_move_component.set_speed(speed_component.get_chase_speed())
 		ai_move_component.set_running(false)
 
 # -----------------------------------------------------------------------------
@@ -228,21 +228,21 @@ func _tick_curiosity_state() -> void:
 # -----------------------------------------------------------------------------
 func _get_urge_state() -> String:
 	if world_state.get_state("meter_is_full"):
-		_tick_run_state(false)
+		_tick_run_state()
 		return "fighting"
 	if world_state.get_state("sees_target"):
-		_tick_run_state(true)
+		_tick_run_state()
 		return "hunting"
 	if world_state.get_state("threat_nearby"):
-		_tick_run_state(false)
+		_tick_run_state()
 		return "threatened"
 	if world_state.get_state("target_lost"):
-		_tick_run_state(false)
+		_tick_run_state()
 		return "working"
 	if world_state.get_state("at_home"):
-		_tick_run_state(false)
+		_tick_run_state()
 		return "safe"
-	_tick_run_state(false)
+	_tick_run_state()
 	return "working"
 
 # -----------------------------------------------------------------------------
