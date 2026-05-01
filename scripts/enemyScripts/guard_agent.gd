@@ -218,10 +218,10 @@ func _tick_run_state(is_hunting: bool) -> void:
 # -----------------------------------------------------------------------------
 
 func _tick_curiosity_state() -> void:
-    if urge.get_curiosity_urge() >= 0.5:
-        world_state.set_state("curiosity_high", true)
-    else:
-        world_state.set_state("curiosity_high", false)
+	if urge.get_curiosity_urge() >= 0.5:
+		world_state.set_state("curiosity_high", true)
+	else:
+		world_state.set_state("curiosity_high", false)
 
 # -----------------------------------------------------------------------------
 # _get_urge_state
