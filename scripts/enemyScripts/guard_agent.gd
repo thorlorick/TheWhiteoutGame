@@ -255,7 +255,7 @@ func _replan() -> void:
 		print(">>> REPLAN: goal already satisfied: %s" % best_goal["name"])  # NEW
 		return
 		
-	var best_action = planner.get_best_action(best_goal, actions.actions, world_state)
+	var best_action = planner.get_best_action(best_goal, actions.get_actions_with_costs(urge), world_state)
 	
 	if best_action.is_empty():
 		print(">>> REPLAN: no valid action found for goal: %s" % best_goal["name"])  # NEW
