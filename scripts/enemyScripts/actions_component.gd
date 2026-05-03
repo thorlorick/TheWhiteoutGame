@@ -93,6 +93,8 @@ func get_actions_with_costs(urge_component: UrgeComponent) -> Array:
 	var duty       = urge_component.get_duty_urge()
 	var curiosity  = urge_component.get_curiosity_urge()
 	var aggression = urge_component.get_aggression_urge()
+	print(">>> CALCULATING COSTS — comfort: %.2f | duty: %.2f | curiosity: %.2f | aggression: %.2f" % [comfort, duty, curiosity, aggression])
+	
 	
 	return [
 		# --- BeSafe (is_safe: true) -------------------------------------------

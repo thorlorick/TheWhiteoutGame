@@ -18,4 +18,4 @@ position = Vector2(582, 68.00001)
 nav_region = NodePath("../NavigationRegion2D")
 
 [node name="Player" parent="." unique_id=239320486 instance=ExtResource("2_843q2")]
-position = Vector2(586, 318)
+position = Vector2(79, 315)
