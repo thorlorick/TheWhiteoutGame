@@ -455,6 +455,7 @@ func _on_arrived_home() -> void:
 func _on_new_patrol_target(position: Vector2) -> void:
 	world_state.set_state("at_home", false)
 	ai_move_component.destination_reached.connect(patrol_component.arrived, CONNECT_ONE_SHOT)
+	print(">>> CONNECTED: destination_reached -> patrol_component.arrived")
 	ai_move_component.set_target(position)
 
 func _on_search_move_to(position: Vector2) -> void:
@@ -546,6 +547,7 @@ func _on_knockback_finished() -> void:
 # -----------------------------------------------------------------------------
 func _clear_pending_arrivals() -> void:
 	if ai_move_component.destination_reached.is_connected(patrol_component.arrived):
+		print(">>> DISCONNECTING: patrol_component.arrived")
 		ai_move_component.destination_reached.disconnect(patrol_component.arrived)
 	if ai_move_component.destination_reached.is_connected(search_component.arrived):
 		ai_move_component.destination_reached.disconnect(search_component.arrived)

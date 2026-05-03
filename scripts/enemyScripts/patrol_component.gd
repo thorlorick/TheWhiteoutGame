@@ -12,8 +12,8 @@ signal new_patrol_target(position: Vector2)
 signal at_post_started
 signal at_post_ended
 
-const DELAY_MIN: float = 1.0   # shortest check — quick glance
-const DELAY_MAX: float = 5.0   # longest check — thorough sweep
+const DELAY_MIN: float = 0.5   # shortest check — quick glance
+const DELAY_MAX: float = 2.0   # longest check — thorough sweep
 
 @export var nav_region:    NavigationRegion2D
 @export var home_position: Vector2
