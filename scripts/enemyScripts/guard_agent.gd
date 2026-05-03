@@ -71,9 +71,9 @@ func _ready() -> void:
 	_connect_reflex_signals()
 	_setup_animation()
 
-	world_state.set_state("at_home", true)
+	#world_state.set_state("at_home", true)
 	world_state.set_state("is_safe", true)
-	world_state.set_state("working", false)
+	#world_state.set_state("working", false)
 
 # -----------------------------------------------------------------------------
 # SIGNAL WIRING
@@ -207,7 +207,7 @@ func _tick_run_state() -> void:
 		ai_move_component.set_speed(speed_component.get_run_speed())
 		ai_move_component.set_running(true)
 	else:
-		ai_move_component.set_speed(speed_component.get_chase_speed())
+		ai_move_component.set_speed(speed_component.get_speed())
 		ai_move_component.set_running(false)
 
 # -----------------------------------------------------------------------------
@@ -239,7 +239,7 @@ func _get_urge_state() -> String:
 	if world_state.get_state("target_lost"):
 		_tick_run_state()
 		return "working"
-	if world_state.get_state("at_home"):
+	if world_state.get_state("is_safe"):
 		_tick_run_state()
 		return "safe"
 	_tick_run_state()
