@@ -251,9 +251,9 @@ func _get_urge_state() -> String:
 func _replan() -> void:
 	var best_goal = planner.get_best_goal(goals.goals, _current_goal_name)
 	
-	if planner.is_goal_satisfied(best_goal, world_state):
-		print(">>> REPLAN: goal already satisfied: %s" % best_goal["name"])  # NEW
-		return
+	#if planner.is_goal_satisfied(best_goal, world_state):
+	#	print(">>> REPLAN: goal already satisfied: %s" % best_goal["name"])  # NEW
+	#	return
 		
 	var best_action = planner.get_best_action(best_goal, actions.get_actions_with_costs(urge), world_state)
 	

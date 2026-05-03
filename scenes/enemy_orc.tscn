@@ -277,6 +277,8 @@ body = NodePath("..")
 
 [node name="SpeedComponent" type="Node" parent="." unique_id=1475648298]
 script = ExtResource("8_vckl6")
+base_speed = 25.0
+chase_speed = 40.0
 
 [node name="KnockbackComponent" type="Node" parent="." unique_id=1531630033]
 script = ExtResource("15_ut45h")
