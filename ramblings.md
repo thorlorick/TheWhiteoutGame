@@ -93,6 +93,9 @@ Really need to get an art style nailed down, or maybe not...I think I have an id
 # May 1, 2026
 Somehow I'm back to messing with the urge system again. There was some weird behaviour tree hiding in the code, but in getting rid of it, i lose the urge system...new bug to play around with....combat back on hold again!!!
 
-#May 2, 2026
+# May 2, 2026
 Ok, nothing to freak out about, but we adjusted the urge system slightly. We had to put in some variable costs in order for the weight of the costs to actually come into play. It seems to hold, but we probably won't know for sure until we get more guards, with more personalities. Also, I figured out how to use the spritesheets from the LLC site. If you use animatedsprite2d as the animator, and then pull those frames into the player, you have so much more control over the sheet..you can adjust the frames on the fly. It's so much easier.
 I can have MULTIPLE teachers and staff now. So good.
+
+# May 5, 2026
+Urge system seems to be holding, but it's hard to tell without the actual game play, and without changing the personality, which I plan it do soon. Next, think I want to start looking at camera and lighting...seems like an important part of the game design world -- lighting in particular. I also have to start setting up collision layers for the different systems. Lost to do. Lots of time still.
