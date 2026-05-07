@@ -1,24 +1,35 @@
 class_name ActionsComponent
-# -----------------------------------------------------------------------------
-# ActionsComponent
-# Actions have names, costs, preconditions, and effects.
-# 1.0 = natural response, no friction.
-# Above 1.0 = resistance — effort, risk, or conflict with nature.
-# Costs are base values for a 5/5/5/5 guard. Personality tuning comes later.
-# Chase appears in three goals — cost reflects motivation behind it.
-# -----------------------------------------------------------------------------
+
 # -----------------------------------------------------------------------------
 # get_actions_with_costs
 # Returns actions array with costs calculated from current urge state.
 # Called by GuardAgent during replan.
 # -----------------------------------------------------------------------------
-func get_actions_with_costs(urge_component: UrgeComponent) -> Array:
-	var comfort    = urge_component.get_comfort_urge()
-	var duty       = urge_component.get_duty_urge()
-	var curiosity  = urge_component.get_curiosity_urge()
-	var aggression = urge_component.get_aggression_urge()
-	print(">>> CALCULATING COSTS — comfort: %.2f | duty: %.2f | curiosity: %.2f | aggression: %.2f" % [comfort, duty, curiosity, aggression])
+
+# Cache urge values here
+var _comfort: float = 0.5
+var _duty: float = 0.5
+var _curiosity: float = 0.5
+var _aggression: float = 0.5
+
+# -----------------------------------------------------------------------------
+# update_urge_state
+# Updates cached urge values. Will be called by GuardAgent when urges change.
+# -----------------------------------------------------------------------------
+func update_urge_state(comfort: float, duty: float, curiosity: float, aggression: float) -> void:
+	_comfort = comfort
+	_duty = duty
+	_curiosity = curiosity
+	_aggression = aggression
+
+func get_actions_with_costs() -> Array:
+	# Use cached values directly - no more reaching into UrgeComponent!
+	var comfort = _comfort
+	var duty = _duty
+	var curiosity = _curiosity
+	var aggression = _aggression
 	
+	print(">>> CALCULATING COSTS — comfort: %.2f | duty: %.2f | curiosity: %.2f | aggression: %.2f" % [_comfort, _duty, _curiosity, _aggression])
 	
 	return [
 		# --- BeSafe (is_safe: true) -------------------------------------------

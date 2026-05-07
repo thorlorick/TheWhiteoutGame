@@ -108,6 +108,8 @@ func _connect_signals() -> void:
 
 	search_component.search_move_to.connect(_on_search_move_to)
 	search_component.search_finished.connect(_on_search_finished)
+	
+	urge.urges_changed.connect(_on_urges_changed) 
 
 	vision_component.target_spotted.connect(_on_target_spotted)
 	vision_component.target_lost.connect(_on_target_lost)
@@ -246,6 +248,12 @@ func _get_urge_state() -> String:
 	return "working"
 
 # -----------------------------------------------------------------------------
+# _on_urges_changed — UrgeComponent broadcasts new values
+# -----------------------------------------------------------------------------
+func _on_urges_changed(comfort: float, duty: float, curiosity: float, aggression: float) -> void:
+	actions.update_urge_state(comfort, duty, curiosity, aggression)
+
+# -----------------------------------------------------------------------------
 # _replan
 # -----------------------------------------------------------------------------
 func _replan() -> void:
@@ -254,8 +262,8 @@ func _replan() -> void:
 	#if planner.is_goal_satisfied(best_goal, world_state):
 	#	print(">>> REPLAN: goal already satisfied: %s" % best_goal["name"])  # NEW
 	#	return
-		
-	var best_action = planner.get_best_action(best_goal, actions.get_actions_with_costs(urge), world_state)
+	
+	var best_action = planner.get_best_action(best_goal, actions.get_actions_with_costs(), world_state)
 	
 	if best_action.is_empty():
 		print(">>> REPLAN: no valid action found for goal: %s" % best_goal["name"])  # NEW
@@ -305,7 +313,6 @@ func _on_best_chosen_action(action: Dictionary) -> void:
 		"Patrol":
 			world_state.set_state("at_home", false)
 			world_state.set_state("working", true)
-			world_state.set_state("is_safe", false)
 			urge.committed_to_work()
 			patrol_component.start()
 

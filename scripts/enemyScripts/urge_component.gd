@@ -10,6 +10,10 @@ class_name UrgeComponent
 # The agent decides which state to pass. This component just ticks.
 # -----------------------------------------------------------------------------
 
+# NEW: Signal emitted whenever urges change
+signal urges_changed(comfort: float, duty: float, curiosity: float, aggression: float)
+
+
 var comfort_urge:    float = 0.5
 var duty_urge:       float = 0.5
 var curiosity_urge:  float = 0.0
@@ -122,6 +126,9 @@ func tick(delta: float, state: String) -> void:
 			duty_urge       = _decay_toward(duty_urge,       DUTY_URGE_REST,       duty_decay_rate,           delta)
 			curiosity_urge  = _decay_toward(curiosity_urge,  CURIOSITY_URGE_REST,  curiosity_decay_rate,      delta)
 			aggression_urge = min(1.0, aggression_urge + aggression_build_rate * 1.5 * delta)
+
+	# NEW: Broadcast the updated urges
+	urges_changed.emit(comfort_urge, duty_urge, curiosity_urge, aggression_urge)
 
 	_print_timer -= delta
 	if _print_timer <= 0.0:
