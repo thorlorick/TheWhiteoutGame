@@ -61,6 +61,14 @@ run_attack={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="players"
+2d_physics/layer_2="hitboxes"
+2d_physics/layer_3="hurtboxes"
+2d_physics/layer_4="environment"
+2d_physics/layer_5="personal_space"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
