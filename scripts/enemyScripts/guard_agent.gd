@@ -313,6 +313,7 @@ func _on_best_chosen_action(action: Dictionary) -> void:
 		"Patrol":
 			world_state.set_state("at_home", false)
 			world_state.set_state("working", true)
+			world_state.set_state("is_safe", false) 
 			urge.committed_to_work()
 			patrol_component.start()
 

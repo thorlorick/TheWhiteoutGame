@@ -14,8 +14,8 @@ class_name UrgeComponent
 signal urges_changed(comfort: float, duty: float, curiosity: float, aggression: float)
 
 
-var comfort_urge:    float = 0.5
-var duty_urge:       float = 0.5
+var comfort_urge:    float = 0.0
+var duty_urge:       float = 0.0
 var curiosity_urge:  float = 0.0
 var aggression_urge: float = 0.0
 
@@ -94,15 +94,15 @@ func tick(delta: float, state: String) -> void:
 
 		"safe":
 			# cup of tea. comfortable but duty is nagging quietly.
-			comfort_urge    = _decay_toward(comfort_urge, COMFORT_URGE_REST, comfort_build_rate * 0.5, delta)
-			duty_urge       = min(1.0, duty_urge + duty_build_rate * delta)
+			comfort_urge = _decay_toward(comfort_urge, COMFORT_URGE_REST, comfort_decay_rate, delta)
+			duty_urge = min(1.0, duty_urge + duty_build_rate * delta)
 			curiosity_urge  = _decay_toward(curiosity_urge, CURIOSITY_URGE_REST, curiosity_decay_rate, delta)
 			aggression_urge = _decay_toward(aggression_urge, AGGRESSION_URGE_REST, aggression_decay_rate, delta)
 		
 		"working":
 			# out and about. doing the job but misses home.
-			comfort_urge    = min(1.0, comfort_urge   + comfort_build_rate   * delta)
-			duty_urge       = _decay_toward(duty_urge,       DUTY_URGE_REST,       duty_decay_rate,       delta)
+			comfort_urge = min(1.0, comfort_urge + comfort_build_rate * delta)
+			duty_urge = _decay_toward(duty_urge, DUTY_URGE_REST, duty_decay_rate, delta)
 			curiosity_urge  = _decay_toward(curiosity_urge,  CURIOSITY_URGE_REST,  curiosity_decay_rate,  delta)
 			aggression_urge = _decay_toward(aggression_urge, AGGRESSION_URGE_REST, aggression_decay_rate, delta)
 

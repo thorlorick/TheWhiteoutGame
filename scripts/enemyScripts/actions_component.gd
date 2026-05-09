@@ -62,16 +62,16 @@ func get_actions_with_costs() -> Array:
 			"name":          "Patrol",
 			# High duty = cheap to patrol
 			# High comfort = expensive (wants to go home instead)
-			"cost":          1.0 + (1.0 - duty) * 2.0 + comfort * 1.5,
-			"preconditions": {"is_safe": true, "sees_target": false},
+			"cost":          0.5 + (1.0 - duty) * 2.0 + comfort * 1.5,
+			"preconditions": {"meter_is_full": false, "sees_target": false},
 			"effects":       {"working": true, "at_home": false}
 		},
 		{
 			"name":          "StandGuard",
 			# High duty = cheap to stand guard
 			# High comfort = expensive (wants to rest)
-			"cost":          1.0 + (1.0 - duty) * 1.5 + comfort * 1.0,
-			"preconditions": {"at_post": true, "sees_target": false},
+			"cost":          1.2 + (1.0 - duty) * 1.5 + comfort * 1.0,
+			"preconditions": {"meter_is_full": false, "sees_target": false},
 			"effects":       {"working": true}
 		},
 		{
