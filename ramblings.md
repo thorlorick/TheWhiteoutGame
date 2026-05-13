@@ -99,3 +99,6 @@ I can have MULTIPLE teachers and staff now. So good.
 
 # May 5, 2026
 Urge system seems to be holding, but it's hard to tell without the actual game play, and without changing the personality, which I plan it do soon. Next, think I want to start looking at camera and lighting...seems like an important part of the game design world -- lighting in particular. I also have to start setting up collision layers for the different systems. Lost to do. Lots of time still.
+
+# May 13, 2026
+Life has a way of interrupting projects and this one is no different. We have managed to get the guard to a point where the urge system and run and patrol all seem to work. I need fix the combat system, but actually finding the time to do it is the harder part. The goal should be 1 hour a day...that shouldn't be too hard, and yet....alright, back to work!!
