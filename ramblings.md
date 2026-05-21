@@ -102,3 +102,6 @@ Urge system seems to be holding, but it's hard to tell without the actual game p
 
 # May 13, 2026
 Life has a way of interrupting projects and this one is no different. We have managed to get the guard to a point where the urge system and run and patrol all seem to work. I need fix the combat system, but actually finding the time to do it is the harder part. The goal should be 1 hour a day...that shouldn't be too hard, and yet....alright, back to work!!
+
+# May 21, 2026
+Far too long to be away from this silly thing, but I had some issues in another project that needed immediate attention. now we are back
