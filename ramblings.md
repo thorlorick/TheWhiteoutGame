@@ -105,3 +105,6 @@ Life has a way of interrupting projects and this one is no different. We have ma
 
 # May 21, 2026
 Far too long to be away from this silly thing, but I had some issues in another project that needed immediate attention. now we are back
+
+# May 22, 2026
+I have been working too much on my other project, but this one is still around. I'm not sure what to do. I have to do all the graphic "stuff" and that scares me. I'm not very good with the tile layer maps and building the actual dungeons. I'll keep at it though. I also have to figure out if there is a way to dynamically produce hit boxes, or do they just have to be coded with the animations...I guess it's just another thing to do..of which I have many.
