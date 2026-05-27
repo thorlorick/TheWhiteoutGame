@@ -108,3 +108,8 @@ Far too long to be away from this silly thing, but I had some issues in another 
 
 # May 22, 2026
 I have been working too much on my other project, but this one is still around. I'm not sure what to do. I have to do all the graphic "stuff" and that scares me. I'm not very good with the tile layer maps and building the actual dungeons. I'll keep at it though. I also have to figure out if there is a way to dynamically produce hit boxes, or do they just have to be coded with the animations...I guess it's just another thing to do..of which I have many.
+
+# May 27, 2026
+We lost power for a few days and that set us back a bit, but we have been dwindling a bit in energy and motivation. The plan right now is to build the first room and the first guard...the drama teacher!!! I'm going to try to get the first "scene" finished so that all the "systems" work...knockback, runes, inventory, sentence completion, door opening...jeez, there is a lot that hasn't been done...but within that one room, is the whole game!!!!
+back to work
+
