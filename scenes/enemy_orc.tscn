@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ce0iaje4y8u1n" path="res://scripts/enemyScripts/guard_agent.gd" id="1_eud83"]
 [ext_resource type="Script" uid="uid://colm0g486s468" path="res://scripts/enemyScripts/attack_component.gd" id="2_fa43r"]
 [ext_resource type="Resource" uid="uid://k0uc1e3r5k0y" path="res://resources/new_sloth_guard.tres" id="2_vckl6"]
-[ext_resource type="Texture2D" uid="uid://cg8p1pdv1rq32" path="res://assets/spritesheets/orc_1.png" id="3_s2g5q"]
+[ext_resource type="Texture2D" uid="uid://cg8p1pdv1rq32" path="res://assets/spritesheets/enemies/orc_1.png" id="3_s2g5q"]
 [ext_resource type="Script" uid="uid://clkn21e8tcvqs" path="res://scripts/enemyScripts/chase_component.gd" id="3_ut45h"]
 [ext_resource type="AnimationLibrary" uid="uid://57lhn4o30nwp" path="res://assets/animations.res" id="4_ex7a3"]
 [ext_resource type="Script" uid="uid://byrbh5cextebe" path="res://scripts/enemyScripts/health_component.gd" id="4_s2g5q"]

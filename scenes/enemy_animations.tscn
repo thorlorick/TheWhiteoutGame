@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://ojhov2468rqe"]
 
-[ext_resource type="Texture2D" uid="uid://cg8p1pdv1rq32" path="res://assets/spritesheets/orc_1.png" id="1_umac5"]
+[ext_resource type="Texture2D" uid="uid://cg8p1pdv1rq32" path="res://assets/spritesheets/enemies/orc_1.png" id="1_umac5"]
 [ext_resource type="Script" uid="uid://bikt53pvo0rj6" path="res://scripts/enemyScripts/animation_events.gd" id="2_0ger0"]
+
 
 [sub_resource type="Animation" id="Animation_b0kc5"]
 length = 0.001

@@ -112,4 +112,3 @@ I have been working too much on my other project, but this one is still around. 
 # May 27, 2026
 We lost power for a few days and that set us back a bit, but we have been dwindling a bit in energy and motivation. The plan right now is to build the first room and the first guard...the drama teacher!!! I'm going to try to get the first "scene" finished so that all the "systems" work...knockback, runes, inventory, sentence completion, door opening...jeez, there is a lot that hasn't been done...but within that one room, is the whole game!!!!
 back to work
-

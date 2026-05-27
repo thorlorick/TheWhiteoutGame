@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bl7aj5cb3sbxp"]
 
-[ext_resource type="Texture2D" uid="uid://gl0fl7c3o3n5" path="res://assets/spritesheets/hero_1.png" id="1_7r22s"]
+[ext_resource type="Texture2D" uid="uid://gl0fl7c3o3n5" path="res://assets/spritesheets/hero/hero_1.png" id="1_7r22s"]
+
 
 [sub_resource type="Animation" id="Animation_b0kc5"]
 length = 0.001

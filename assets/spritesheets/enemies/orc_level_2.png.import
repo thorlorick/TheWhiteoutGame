@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7xwjpjcjk2ru"
-path="res://.godot/imported/orc_level_2.png-395a1098536fc34f33957fb9b197f1be.ctex"
+path="res://.godot/imported/orc_level_2.png-dd8d6c6fe07dc2e97359bb38398b3ed4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/spritesheets/orc_level_2.png"
-dest_files=["res://.godot/imported/orc_level_2.png-395a1098536fc34f33957fb9b197f1be.ctex"]
+source_file="res://assets/spritesheets/enemies/orc_level_2.png"
+dest_files=["res://.godot/imported/orc_level_2.png-dd8d6c6fe07dc2e97359bb38398b3ed4.ctex"]
 
 [params]
 
