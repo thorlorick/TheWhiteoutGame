@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://df6suxqxb3u7w"]
 
 [ext_resource type="PackedScene" uid="uid://fqch7gostal2" path="res://scenes/player.tscn" id="2_843q2"]
-[ext_resource type="PackedScene" uid="uid://bnwtmru2tny23" path="res://scenes/enemy_orc.tscn" id="2_t18mc"]
+[ext_resource type="PackedScene" uid="uid://bffndk5oohcwf" path="res://scenes/drama_teacher.tscn" id="3_5rfim"]
 [ext_resource type="PackedScene" uid="uid://bnbl8nhkpwoiy" path="res://scenes/world.tscn" id="3_843q2"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4x8cm"]
@@ -16,9 +16,9 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(19, 17, 19, 345, 627, 3
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=251822025]
 navigation_polygon = SubResource("NavigationPolygon_4x8cm")
 
-[node name="EnemyOrc" parent="." unique_id=1355604271 node_paths=PackedStringArray("nav_region") instance=ExtResource("2_t18mc")]
-position = Vector2(330, 287)
-nav_region = NodePath("../NavigationRegion2D")
-
 [node name="Player" parent="." unique_id=239320486 instance=ExtResource("2_843q2")]
 position = Vector2(535, 47)
+
+[node name="DramaTeacher" parent="." unique_id=1044253279 node_paths=PackedStringArray("nav_region") instance=ExtResource("3_5rfim")]
+position = Vector2(128, 137)
+nav_region = NodePath("../NavigationRegion2D")
