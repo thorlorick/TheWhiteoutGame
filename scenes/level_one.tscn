@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://df6suxqxb3u7w"]
 
 [ext_resource type="PackedScene" uid="uid://fqch7gostal2" path="res://scenes/player.tscn" id="2_843q2"]
+[ext_resource type="PackedScene" uid="uid://bffndk5oohcwf" path="res://scenes/drama_teacher.tscn" id="3_5rfim"]
 [ext_resource type="PackedScene" uid="uid://bnbl8nhkpwoiy" path="res://scenes/world.tscn" id="3_843q2"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4x8cm"]
@@ -17,3 +18,7 @@ navigation_polygon = SubResource("NavigationPolygon_4x8cm")
 
 [node name="Player" parent="." unique_id=239320486 instance=ExtResource("2_843q2")]
 position = Vector2(535, 47)
+
+[node name="DramaTeacher" parent="." unique_id=728692414 node_paths=PackedStringArray("nav_region") instance=ExtResource("3_5rfim")]
+position = Vector2(133.99998, 98.99999)
+nav_region = NodePath("../NavigationRegion2D")
