@@ -1,7 +1,5 @@
 [gd_scene format=3 uid="uid://dnvus86mw3551"]
 
-[ext_resource type="Script" uid="uid://ce0iaje4y8u1n" path="res://scripts/enemyScripts/guard_agent.gd" id="1_m1eet"]
-[ext_resource type="Resource" uid="uid://brb0ygrhngtva" path="res://resources/standard_guard.tres" id="2_a6bxx"]
 [ext_resource type="Texture2D" uid="uid://bob0w5qkucw3v" path="res://assets/spritesheets/enemies/art_teacher.png" id="3_oqxhu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_43cu1"]
@@ -1034,11 +1032,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="DramaTeacher" type="CharacterBody2D" unique_id=728692414]
+[node name="EnemyTemplate" type="CharacterBody2D" unique_id=728692414]
 scale = Vector2(0.7, 0.7)
-script = ExtResource("1_m1eet")
-home_position = Vector2(136, 184)
-personality = ExtResource("2_a6bxx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1051085821]
 position = Vector2(0, 4)
