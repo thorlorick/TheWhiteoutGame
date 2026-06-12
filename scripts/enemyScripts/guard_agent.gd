@@ -137,6 +137,7 @@ func _connect_reflex_signals() -> void:
 func _setup_animation() -> void:
 	var anim_tree = $AnimationTree
 	animation.setup(anim_tree)
+	
 
 # -----------------------------------------------------------------------------
 # PROCESS
@@ -146,6 +147,8 @@ func _process(delta: float) -> void:
 	_tick_in_range()
 	_tick_curiosity_state()
 	_tick_run_state()
+	urge.tick(delta, _get_urge_state())
+
 
 	var guard_state: String = _get_urge_state()
 	urge.tick(delta, guard_state)

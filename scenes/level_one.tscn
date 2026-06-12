@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://df6suxqxb3u7w"]
 
 [ext_resource type="PackedScene" uid="uid://fqch7gostal2" path="res://scenes/player.tscn" id="2_843q2"]
+[ext_resource type="PackedScene" uid="uid://bpevc5mps1qcs" path="res://scenes/science_teacher.tscn" id="2_t18mc"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4x8cm"]
 vertices = PackedVector2Array(617, 335, 29, 335, 29, 27, 617, 27)
@@ -14,3 +15,7 @@ navigation_polygon = SubResource("NavigationPolygon_4x8cm")
 
 [node name="Player" parent="." unique_id=239320486 instance=ExtResource("2_843q2")]
 position = Vector2(535, 47)
+
+[node name="ScienceTeacher" parent="." unique_id=728692414 node_paths=PackedStringArray("nav_region") instance=ExtResource("2_t18mc")]
+position = Vector2(470.99997, 294)
+nav_region = NodePath("../NavigationRegion2D")
