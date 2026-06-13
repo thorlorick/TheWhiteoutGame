@@ -23,7 +23,6 @@ func setup(tree: AnimationTree) -> void:
 # -----------------------------------------------------------------------------
 
 func update(direction: Vector2, is_moving: bool, is_running: bool) -> void:
-	print(">>> ANIM UPDATE: dir=%s moving=%s running=%s" % [direction, is_moving, is_running])
 	# Always update facing direction
 	if direction != Vector2.ZERO:
 		current_direction = direction.normalized()
@@ -41,13 +40,10 @@ func update(direction: Vector2, is_moving: bool, is_running: bool) -> void:
 
 	# Normal movement state control
 	if is_running and direction != Vector2.ZERO:
-		print(">>> TRAVEL: run")
 		state_machine.travel("run")
 	elif is_moving and direction != Vector2.ZERO:
-		print(">>> TRAVEL: run")
 		state_machine.travel("walk")
 	else:
-		print(">>> TRAVEL: idle")
 		state_machine.travel("idle")
 
 # -----------------------------------------------------------------------------

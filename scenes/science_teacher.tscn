@@ -1086,6 +1086,38 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_ixghu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle_down"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v07hw"]
+_data = {
+&"RESET": SubResource("Animation_ixghu")
+}
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ixghu"]
 animation = &"Enemy_Animations/idle_up"
 
@@ -1205,36 +1237,28 @@ blend_mode = 1
 advance_mode = 0
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nvirs"]
-advance_mode = 0
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_icnie"]
-advance_mode = 0
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_107j1"]
-advance_mode = 0
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_n3xbe"]
-advance_mode = 0
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_o20c2"]
-advance_mode = 0
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qaw2w"]
 switch_mode = 2
-advance_mode = 0
+advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_prmao"]
-advance_mode = 0
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rv7uo"]
 switch_mode = 2
-advance_mode = 0
+advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2op64"]
-advance_mode = 0
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ixghu"]
-advance_mode = 0
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_cmwlg"]
 resource_local_to_scene = true
@@ -1254,8 +1278,10 @@ graph_offset = Vector2(0, -9.849947)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3gnei"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2h25r"]
+size = Vector2(20, 35.714287)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2h25r"]
+radius = 66.039566
 
 [node name="ScienceTeacher" type="CharacterBody2D" unique_id=728692414 node_paths=PackedStringArray("ai_move_component", "vision_component", "chase_component", "patrol_component", "search_component", "health_component", "hitbox_component", "hurtbox_component", "knockback_component", "speed_component", "animation_events", "combat_meter", "personal_space")]
 scale = Vector2(0.7, 0.7)
@@ -1268,7 +1294,7 @@ search_component = NodePath("SearchComponent")
 health_component = NodePath("HealthComponent")
 hitbox_component = NodePath("HitboxComponent")
 hurtbox_component = NodePath("HurtboxComponent")
-home_position = Vector2(136, 184)
+home_position = Vector2(78, 301)
 personality = ExtResource("2_ixghu")
 knockback_component = NodePath("KnockbackComponent")
 speed_component = NodePath("SpeedComponent")
@@ -1284,13 +1310,12 @@ debug_color = Color(0, 0.6, 0.023529412, 0.41960785)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1523439450]
 sprite_frames = SubResource("SpriteFrames_3qm13")
 animation = &"idle_down"
-frame_progress = 0.89595896
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=879751765]
+libraries/ = SubResource("AnimationLibrary_v07hw")
 libraries/Enemy_Animations = ExtResource("4_ixghu")
 
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=1101867426]
-active = false
 tree_root = SubResource("AnimationNodeStateMachine_cmwlg")
 anim_player = NodePath("../AnimationPlayer")
 parameters/idle/blend_position = Vector2(0, 0)
@@ -1326,7 +1351,7 @@ script = ExtResource("10_n3xbe")
 
 [node name="PatrolComponent" type="Node" parent="." unique_id=2117664029]
 script = ExtResource("11_o20c2")
-home_position = Vector2(136, 184)
+home_position = Vector2(78, 301)
 
 [node name="SearchComponent" type="Node" parent="." unique_id=78566501]
 script = ExtResource("12_qaw2w")
@@ -1344,19 +1369,28 @@ script = ExtResource("15_cmwlg")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=337062360]
 
 [node name="HitboxComponent" type="Area2D" parent="." unique_id=1849638592]
+collision_layer = 2
+collision_mask = 0
+monitoring = false
 script = ExtResource("16_ow430")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=143076323]
 shape = SubResource("RectangleShape2D_3gnei")
 
 [node name="HurtboxComponent" type="Area2D" parent="." unique_id=1906442218]
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("17_8n2c3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" unique_id=1525040685]
+position = Vector2(0, 7.857141)
+scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_2h25r")
 debug_color = Color(0.9254902, 0.13725491, 0.043137256, 0.41960785)
 
 [node name="PersonalSpace" type="Area2D" parent="." unique_id=918768375]
+collision_layer = 16
+monitorable = false
 script = ExtResource("18_gaigc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PersonalSpace" unique_id=1961772888]

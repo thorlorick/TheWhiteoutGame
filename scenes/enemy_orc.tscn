@@ -319,4 +319,6 @@ debug_color = Color(0.9831539, 0.10557165, 0.19346508, 0.41960785)
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=329260611]
 
 [node name="PersonalSpace" parent="." unique_id=568930324 instance=ExtResource("18_pd8mg")]
+collision_layer = 16
+monitorable = false
 script = ExtResource("20_1h2fr")
