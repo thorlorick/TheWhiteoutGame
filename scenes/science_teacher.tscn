@@ -1234,7 +1234,6 @@ blend_point_3/pos = Vector2(1, 0)
 blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tux1g"]
-advance_mode = 0
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nvirs"]
 
@@ -1285,6 +1284,7 @@ radius = 66.039566
 
 [node name="ScienceTeacher" type="CharacterBody2D" unique_id=728692414 node_paths=PackedStringArray("ai_move_component", "vision_component", "chase_component", "patrol_component", "search_component", "health_component", "hitbox_component", "hurtbox_component", "knockback_component", "speed_component", "animation_events", "combat_meter", "personal_space")]
 scale = Vector2(0.7, 0.7)
+motion_mode = 1
 script = ExtResource("1_2op64")
 ai_move_component = NodePath("AIMoveComponent")
 vision_component = NodePath("VisonComponent")
@@ -1358,6 +1358,7 @@ script = ExtResource("12_qaw2w")
 
 [node name="SpeedComponent" type="Node" parent="." unique_id=577024581]
 script = ExtResource("13_prmao")
+base_speed = 25.0
 
 [node name="VisonComponent" type="Node2D" parent="." unique_id=1624376634 node_paths=PackedStringArray("body")]
 script = ExtResource("14_rv7uo")

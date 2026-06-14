@@ -77,7 +77,7 @@ func apply_personality(p: PersonalityResource) -> void:
 	target_spotted_aggression_bump = lerp(0.05, 0.2,  a)
 
 	# Comfort / Duty / Curiosity Math
-	comfort_build_rate   = lerp(0.01, 0.05, c)
+	comfort_build_rate   = lerp(0.01, 0.03, c)
 	comfort_decay_rate   = lerp(0.05, 0.01, c)
 	duty_build_rate      = lerp(0.01, 0.05, d)
 	duty_decay_rate      = lerp(0.05, 0.01, d)

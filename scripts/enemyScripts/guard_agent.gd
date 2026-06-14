@@ -273,7 +273,11 @@ func _replan() -> void:
 		return
 		
 	if best_action["name"] == planner.current_action_name and best_goal["name"] == _current_goal_name:
-		print(">>> REPLAN: already doing best action: %s" % best_action["name"])  # NEW
+		# Attack is a one-shot action — always re-execute it
+		if best_action["name"] == "Attack":
+			_on_best_chosen_action(best_action)
+			return
+		print(">>> REPLAN: already doing best action: %s" % best_action["name"])
 		return
 		
 	_current_goal_name = best_goal["name"]
