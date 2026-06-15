@@ -63,12 +63,21 @@ run_attack={
 
 [layer_names]
 
-2d_physics/layer_1="players"
-2d_physics/layer_2="hitboxes"
-2d_physics/layer_3="hurtboxes"
-2d_physics/layer_4="environment"
-2d_physics/layer_5="personal_space"
-2d_physics/layer_6="interact"
+2d_physics/layer_1="world"
+2d_physics/layer_2="world_objects"
+2d_physics/layer_3="player_body"
+2d_physics/layer_4="enemy_body"
+2d_physics/layer_5="npc_body"
+2d_physics/layer_6="player_hurtbox"
+2d_physics/layer_7="enemy_hurtbox"
+2d_physics/layer_8="npc_hurtbox"
+2d_physics/layer_9="player_hitbox"
+2d_physics/layer_10="enemy_hitbox"
+2d_physics/layer_11="enemy_personal_space"
+2d_physics/layer_12="interactables"
+2d_physics/layer_13="items"
+2d_physics/layer_14="projectiles"
+2d_physics/layer_15="triggers"
 
 [physics]
 
