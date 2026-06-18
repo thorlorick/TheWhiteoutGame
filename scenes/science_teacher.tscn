@@ -24,12 +24,13 @@
 size = Vector2(20, 42)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3gnei"]
+size = Vector2(68.571434, 71.42858)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2h25r"]
 size = Vector2(20, 35.714287)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2h25r"]
-radius = 66.039566
+radius = 200.00002
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rvypx"]
 atlas = ExtResource("3_v07hw")
@@ -1120,6 +1121,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HitboxComponent/HitboxShape:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v07hw"]
 _data = {
@@ -1284,8 +1297,8 @@ graph_offset = Vector2(0, -9.849947)
 
 [node name="ScienceTeacher" type="CharacterBody2D" unique_id=728692414 node_paths=PackedStringArray("ai_move_component", "vision_component", "chase_component", "patrol_component", "search_component", "health_component", "hitbox_component", "hurtbox_component", "knockback_component", "speed_component", "animation_events", "combat_meter", "personal_space")]
 scale = Vector2(0.7, 0.7)
-collision_layer = 8
-collision_mask = 23
+collision_layer = 65536
+collision_mask = 1049095
 motion_mode = 1
 script = ExtResource("1_2op64")
 ai_move_component = NodePath("AIMoveComponent")
@@ -1311,21 +1324,24 @@ debug_color = Color(0, 0.6, 0.023529412, 0.41960785)
 
 [node name="HitboxComponent" type="Area2D" parent="." unique_id=1849638592]
 scale = Vector2(0.99999994, 0.99999994)
-collision_layer = 2
-collision_mask = 0
+collision_layer = 131072
+collision_mask = 1024
 monitoring = false
 script = ExtResource("16_ow430")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=143076323]
+[node name="HitboxShape" type="CollisionShape2D" parent="HitboxComponent" unique_id=143076323]
+position = Vector2(0, 2.8571424)
 shape = SubResource("RectangleShape2D_3gnei")
+disabled = true
+debug_color = Color(0.95661384, 0.17685363, 0.2968185, 0.41960785)
 
 [node name="HurtboxComponent" type="Area2D" parent="." unique_id=1906442218]
 scale = Vector2(0.99999994, 0.99999994)
-collision_layer = 4
-collision_mask = 2
+collision_layer = 262144
+collision_mask = 256
 script = ExtResource("17_8n2c3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" unique_id=1525040685]
+[node name="HurtboxShape" type="CollisionShape2D" parent="HurtboxComponent" unique_id=1525040685]
 position = Vector2(0, 7.857141)
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_2h25r")
@@ -1333,7 +1349,8 @@ debug_color = Color(0.9254902, 0.13725491, 0.043137256, 0.41960785)
 
 [node name="PersonalSpace" type="Area2D" parent="." unique_id=918768375]
 scale = Vector2(0.99999994, 0.99999994)
-collision_layer = 16
+collision_layer = 524288
+collision_mask = 512
 monitorable = false
 script = ExtResource("18_gaigc")
 
@@ -1397,6 +1414,7 @@ base_speed = 25.0
 [node name="VisonComponent" type="Node2D" parent="." unique_id=1624376634 node_paths=PackedStringArray("body")]
 script = ExtResource("14_rv7uo")
 body = NodePath("..")
+wall_collision_mask = 515
 
 [node name="HealthComponent" type="Node" parent="." unique_id=1881194581]
 script = ExtResource("15_cmwlg")

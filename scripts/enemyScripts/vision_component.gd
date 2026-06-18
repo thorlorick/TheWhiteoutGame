@@ -15,7 +15,7 @@ signal target_distance_updated(distance: float)
 # -------------------------------------------------------
 @export_group("Setup")
 @export var body:                CharacterBody2D
-@export var wall_collision_mask: int   = 1
+@export_flags_2d_physics var wall_collision_mask: int = 1
 @export var debug_draw:          bool  = true
 
 @export_group("Rays")

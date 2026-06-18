@@ -14,9 +14,11 @@ radius = 7.0
 height = 26.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qlg0r"]
-size = Vector2(15, 25)
+size = Vector2(15, 24)
 
 [node name="Player" type="CharacterBody2D" unique_id=239320486 groups=["player"]]
+collision_layer = 512
+collision_mask = 16842787
 motion_mode = 1
 script = ExtResource("1_qlg0r")
 
@@ -26,11 +28,12 @@ shape = SubResource("CapsuleShape2D_g2els")
 [node name="HeroAnimations" parent="." unique_id=244050914 instance=ExtResource("1_3vyb7")]
 
 [node name="HurtboxComponent" type="Area2D" parent="." unique_id=1997501626]
-collision_layer = 2
+collision_layer = 1024
+collision_mask = 131072
 script = ExtResource("6_tuyoq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" unique_id=1041968144]
-position = Vector2(-0.5, -0.5)
+position = Vector2(-0.5, 1)
 shape = SubResource("RectangleShape2D_qlg0r")
 debug_color = Color(0.716519, 0.41517657, 0.025157366, 0.41960785)
 
