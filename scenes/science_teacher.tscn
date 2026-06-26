@@ -19,18 +19,16 @@
 [ext_resource type="Script" uid="uid://b0dx4xjh8uf3i" path="res://scripts/enemyScripts/hitbox_component.gd" id="16_ow430"]
 [ext_resource type="Script" uid="uid://xugjpvxboy1o" path="res://scripts/enemyScripts/hurtbox_component.gd" id="17_8n2c3"]
 [ext_resource type="Script" uid="uid://d4c26ourohq8h" path="res://scripts/enemyScripts/personal_space.gd" id="18_gaigc"]
+[ext_resource type="PackedScene" uid="uid://crctk2iqepjem" path="res://scenes/personal_space.tscn" id="19_v07hw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_43cu1"]
 size = Vector2(20, 42)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3gnei"]
-size = Vector2(68.571434, 71.42858)
+size = Vector2(68.571434, 74.28572)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2h25r"]
-size = Vector2(20, 35.714287)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_2h25r"]
-radius = 200.00002
+size = Vector2(34.28572, 48.571438)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rvypx"]
 atlas = ExtResource("3_v07hw")
@@ -582,7 +580,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("3_v07hw")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -593,7 +591,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_am5vg")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle_down",
 "speed": 5.0
 }, {
@@ -604,7 +602,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dgyrk")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle_left",
 "speed": 5.0
 }, {
@@ -615,7 +613,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gxv7p")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle_right",
 "speed": 5.0
 }, {
@@ -626,7 +624,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fjswg")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle_up",
 "speed": 5.0
 }, {
@@ -664,7 +662,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_p0n2b")
 }],
-"loop": true,
+"loop": 1,
 "name": &"run_attack_down",
 "speed": 5.0
 }, {
@@ -702,7 +700,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2w72w")
 }],
-"loop": true,
+"loop": 1,
 "name": &"run_attack_left",
 "speed": 5.0
 }, {
@@ -740,7 +738,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_h0f86")
 }],
-"loop": true,
+"loop": 1,
 "name": &"run_attack_right",
 "speed": 5.0
 }, {
@@ -778,7 +776,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_m4hmy")
 }],
-"loop": true,
+"loop": 1,
 "name": &"run_attack_up",
 "speed": 5.0
 }, {
@@ -807,7 +805,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8oj1i")
 }],
-"loop": true,
+"loop": 1,
 "name": &"run_down",
 "speed": 5.0
 }, {
@@ -836,7 +834,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dvoh0")
 }],
-"loop": true,
+"loop": 1,
 "name": &"run_left",
 "speed": 5.0
 }, {
@@ -865,7 +863,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_j7785")
 }],
-"loop": true,
+"loop": 1,
 "name": &"run_right",
 "speed": 5.0
 }, {
@@ -894,7 +892,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jh7y2")
 }],
-"loop": true,
+"loop": 1,
 "name": &"run_up",
 "speed": 5.0
 }, {
@@ -914,7 +912,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ocyx0")
 }],
-"loop": false,
+"loop": 0,
 "name": &"walk_attack_down",
 "speed": 5.0
 }, {
@@ -934,7 +932,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gjyaf")
 }],
-"loop": false,
+"loop": 0,
 "name": &"walk_attack_left",
 "speed": 5.0
 }, {
@@ -954,7 +952,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_iaqdl")
 }],
-"loop": false,
+"loop": 0,
 "name": &"walk_attack_right",
 "speed": 5.0
 }, {
@@ -974,7 +972,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bci3k")
 }],
-"loop": false,
+"loop": 0,
 "name": &"walk_attack_up",
 "speed": 5.0
 }, {
@@ -1003,7 +1001,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_uxomf")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_down",
 "speed": 5.0
 }, {
@@ -1032,7 +1030,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2h25r")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_left",
 "speed": 7.0
 }, {
@@ -1061,7 +1059,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hh52m")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_right",
 "speed": 5.0
 }, {
@@ -1090,7 +1088,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vcwvr")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_up",
 "speed": 5.0
 }]
@@ -1152,15 +1150,19 @@ animation = &"Enemy_Animations/idle_down"
 animation = &"Enemy_Animations/idle_left"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_2op64"]
+blend_mode = 1
 blend_point_0/node = SubResource("AnimationNodeAnimation_ixghu")
 blend_point_0/pos = Vector2(0, -0.90000004)
+blend_point_0/name = &"0"
 blend_point_1/node = SubResource("AnimationNodeAnimation_v07hw")
 blend_point_1/pos = Vector2(1, 0)
+blend_point_1/name = &"1"
 blend_point_2/node = SubResource("AnimationNodeAnimation_okjuw")
 blend_point_2/pos = Vector2(0, 0.90000004)
+blend_point_2/name = &"2"
 blend_point_3/node = SubResource("AnimationNodeAnimation_07dle")
 blend_point_3/pos = Vector2(-1, 0)
-blend_mode = 1
+blend_point_3/name = &"3"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rv7uo"]
 animation = &"Enemy_Animations/run_up"
@@ -1175,15 +1177,19 @@ animation = &"Enemy_Animations/run_right"
 animation = &"Enemy_Animations/run_left"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_ixghu"]
+blend_mode = 1
 blend_point_0/node = SubResource("AnimationNodeAnimation_rv7uo")
 blend_point_0/pos = Vector2(0, -1)
+blend_point_0/name = &"0"
 blend_point_1/node = SubResource("AnimationNodeAnimation_cmwlg")
 blend_point_1/pos = Vector2(0, 1)
+blend_point_1/name = &"1"
 blend_point_2/node = SubResource("AnimationNodeAnimation_ow430")
 blend_point_2/pos = Vector2(1, 0)
+blend_point_2/name = &"2"
 blend_point_3/node = SubResource("AnimationNodeAnimation_8n2c3")
 blend_point_3/pos = Vector2(-1, 0)
-blend_mode = 1
+blend_point_3/name = &"3"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gaigc"]
 animation = &"Enemy_Animations/run_attack_up"
@@ -1198,15 +1204,19 @@ animation = &"Enemy_Animations/run_attack_right"
 animation = &"Enemy_Animations/run_attack_left"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_v07hw"]
+blend_mode = 1
 blend_point_0/node = SubResource("AnimationNodeAnimation_gaigc")
 blend_point_0/pos = Vector2(0, -1)
+blend_point_0/name = &"0"
 blend_point_1/node = SubResource("AnimationNodeAnimation_8g6w8")
 blend_point_1/pos = Vector2(0, 0.90000004)
+blend_point_1/name = &"1"
 blend_point_2/node = SubResource("AnimationNodeAnimation_xin0e")
 blend_point_2/pos = Vector2(1, 0)
+blend_point_2/name = &"2"
 blend_point_3/node = SubResource("AnimationNodeAnimation_1avba")
 blend_point_3/pos = Vector2(-1, 0)
-blend_mode = 1
+blend_point_3/name = &"3"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_n3xbe"]
 animation = &"Enemy_Animations/walk_up"
@@ -1221,15 +1231,19 @@ animation = &"Enemy_Animations/walk_right"
 animation = &"Enemy_Animations/walk_left"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_okjuw"]
+blend_mode = 1
 blend_point_0/node = SubResource("AnimationNodeAnimation_n3xbe")
 blend_point_0/pos = Vector2(0, -0.90000004)
+blend_point_0/name = &"0"
 blend_point_1/node = SubResource("AnimationNodeAnimation_o20c2")
 blend_point_1/pos = Vector2(0, 1)
+blend_point_1/name = &"1"
 blend_point_2/node = SubResource("AnimationNodeAnimation_qaw2w")
 blend_point_2/pos = Vector2(1, 0)
+blend_point_2/name = &"2"
 blend_point_3/node = SubResource("AnimationNodeAnimation_prmao")
 blend_point_3/pos = Vector2(-1, 0)
-blend_mode = 1
+blend_point_3/name = &"3"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tux1g"]
 animation = &"Enemy_Animations/walk_attack_up"
@@ -1244,15 +1258,19 @@ animation = &"Enemy_Animations/walk_attack_left"
 animation = &"Enemy_Animations/walk_attack_right"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_07dle"]
+blend_mode = 1
 blend_point_0/node = SubResource("AnimationNodeAnimation_tux1g")
 blend_point_0/pos = Vector2(0, -0.90000004)
+blend_point_0/name = &"0"
 blend_point_1/node = SubResource("AnimationNodeAnimation_nvirs")
 blend_point_1/pos = Vector2(0, 0.90000004)
+blend_point_1/name = &"1"
 blend_point_2/node = SubResource("AnimationNodeAnimation_icnie")
 blend_point_2/pos = Vector2(-1, 0)
+blend_point_2/name = &"2"
 blend_point_3/node = SubResource("AnimationNodeAnimation_107j1")
 blend_point_3/pos = Vector2(1, 0)
-blend_mode = 1
+blend_point_3/name = &"3"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tux1g"]
 
@@ -1330,7 +1348,7 @@ monitoring = false
 script = ExtResource("16_ow430")
 
 [node name="HitboxShape" type="CollisionShape2D" parent="HitboxComponent" unique_id=143076323]
-position = Vector2(0, 2.8571424)
+position = Vector2(0, 4.285714)
 shape = SubResource("RectangleShape2D_3gnei")
 disabled = true
 debug_color = Color(0.95661384, 0.17685363, 0.2968185, 0.41960785)
@@ -1342,21 +1360,10 @@ collision_mask = 256
 script = ExtResource("17_8n2c3")
 
 [node name="HurtboxShape" type="CollisionShape2D" parent="HurtboxComponent" unique_id=1525040685]
-position = Vector2(0, 7.857141)
+position = Vector2(3.40598e-07, 5.7142863)
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_2h25r")
 debug_color = Color(0.9254902, 0.13725491, 0.043137256, 0.41960785)
-
-[node name="PersonalSpace" type="Area2D" parent="." unique_id=918768375]
-scale = Vector2(0.99999994, 0.99999994)
-collision_layer = 524288
-collision_mask = 512
-monitorable = false
-script = ExtResource("18_gaigc")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PersonalSpace" unique_id=1961772888]
-shape = SubResource("CircleShape2D_2h25r")
-debug_color = Color(0.56016743, 0.5592805, 0.08559083, 0.41960785)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1523439450]
 sprite_frames = SubResource("SpriteFrames_3qm13")
@@ -1420,3 +1427,7 @@ wall_collision_mask = 515
 script = ExtResource("15_cmwlg")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=337062360]
+
+[node name="PersonalSpace" parent="." unique_id=568930324 instance=ExtResource("19_v07hw")]
+scale = Vector2(3.5, 3.5)
+script = ExtResource("18_gaigc")
