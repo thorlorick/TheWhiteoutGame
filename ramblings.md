@@ -112,3 +112,6 @@ I have been working too much on my other project, but this one is still around. 
 # May 27, 2026
 We lost power for a few days and that set us back a bit, but we have been dwindling a bit in energy and motivation. The plan right now is to build the first room and the first guard...the drama teacher!!! I'm going to try to get the first "scene" finished so that all the "systems" work...knockback, runes, inventory, sentence completion, door opening...jeez, there is a lot that hasn't been done...but within that one room, is the whole game!!!!
 back to work
+
+# June 26, 2026
+Hard to believe I haven't written in a month, but that doesn't mean I haven't been working. A lot of time had to be moved over to Grade Insight as that is the bread winner, but I have a handle on that one so we're back to the Whiteout. I have an enemy template pretty close to done which is nice. I have to try to duplicate it and then see how hard it is to change the spritesheet. Animations and what nots are still a major issue, but it's not too bad. I have to fix knockback and get some timings down, and I still have to build the starting room. It's a lot harder than it looks!!!
