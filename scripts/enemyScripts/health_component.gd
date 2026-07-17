@@ -10,6 +10,7 @@ extends Node
   
 signal hit(damage_info: DamageInfo)
 signal died
+signal health_changed(current_health: float, max_health: float)
 
 var personality: PersonalityResource
 
@@ -21,6 +22,7 @@ func setup(p: PersonalityResource) -> void:
 	personality = p
 	max_health = personality.max_health
 	current_health = max_health
+	health_changed.emit(current_health, max_health)
   
 # -----------------------------------------------------------------------------
 # take_damage — reduce health, emit signals
@@ -32,6 +34,7 @@ func take_damage(damage_info: DamageInfo) -> void:
 	print(">>> HEALTH: took %.1f damage — %.1f / %.1f remaining" % [
 		damage_info.amount, current_health, max_health
 	])
+	health_changed.emit(current_health, max_health)
 	hit.emit(damage_info)
 	if current_health <= 0.0:
 		_die()
@@ -43,6 +46,7 @@ func heal(amount: float) -> void:
 	if is_dead:
 		return
 	current_health = min(max_health, current_health + amount)
+	health_changed.emit(current_health, max_health)
 	  
 # -----------------------------------------------------------------------------
 # _die — mark dead, emit signal

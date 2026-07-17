@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bl7aj5cb3sbxp" path="res://scenes/hero_animations.tscn" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://bjh0paq1k8cye" path="res://scripts/playerScripts/player.gd" id="1_qlg0r"]
+[ext_resource type="PackedScene" uid="uid://bb0el5v471g6c" path="res://scenes/health_bar.tscn" id="2_ur7pv"]
 [ext_resource type="Script" uid="uid://cu8611nrfx2hs" path="res://scripts/playerScripts/player_animation_component.gd" id="3_tuyoq"]
 [ext_resource type="Script" uid="uid://xugjpvxboy1o" path="res://scripts/enemyScripts/hurtbox_component.gd" id="6_tuyoq"]
 [ext_resource type="Script" uid="uid://byrbh5cextebe" path="res://scripts/enemyScripts/health_component.gd" id="7_fjrip"]
@@ -21,6 +22,13 @@ collision_layer = 512
 collision_mask = 16842787
 motion_mode = 1
 script = ExtResource("1_qlg0r")
+
+[node name="HealthBar" parent="." unique_id=235793901 instance=ExtResource("2_ur7pv")]
+offset_left = -10.0
+offset_top = -16.0
+offset_right = 30.0
+offset_bottom = -10.0
+scale = Vector2(0.5, 0.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=520417503]
 shape = SubResource("CapsuleShape2D_g2els")

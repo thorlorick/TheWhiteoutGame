@@ -20,6 +20,7 @@ var combat_fsm  := CombatFSMComponent.new()
 @export var patrol_component:    	PatrolComponent
 @export var search_component:    	SearchComponent
 @export var health_component:    	HealthComponent
+@export var health_bar:				HealthBar
 @export var hitbox_component:    	HitboxComponent
 @export var hurtbox_component:   	HurtboxComponent
 @export var nav_region:          	NavigationRegion2D
@@ -97,6 +98,7 @@ func _connect_signals() -> void:
 
 	health_component.hit.connect(_on_hit_received)
 	health_component.died.connect(_on_died)
+	health_component.health_changed.connect(_on_health_changed)
 
 	hurtbox_component.hurt.connect(_on_hurtbox_hurt)
 
@@ -435,6 +437,9 @@ func _on_hit_received(damage_info: DamageInfo) -> void:
 	world_state.set_state("is_safe",    false)
 	reflex.on_hit_received()
 	_replan()
+	
+func _on_health_changed(current: float, max: float) -> void:
+	health_bar.set_health(current, max)
 
 func _on_attack_triggered(damage_info: DamageInfo) -> void:
 	animation.play_attack(attack.is_running())
