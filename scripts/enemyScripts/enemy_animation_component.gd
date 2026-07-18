@@ -51,9 +51,8 @@ func update(direction: Vector2, is_moving: bool, is_running: bool) -> void:
 func play_attack(is_running: bool) -> void:
 	if is_attacking:
 		return
-
 	is_attacking = true
-
+	print(">>> PLAY ATTACK — direction: %s | running: %s" % [current_direction, is_running])
 	if is_running:
 		state_machine.travel("run_attack")
 	else:

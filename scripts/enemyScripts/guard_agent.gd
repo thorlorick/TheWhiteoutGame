@@ -450,6 +450,7 @@ func _on_attack_hit_frame() -> void:
 	hitbox_component.activate(info)
 
 func _on_attack_animation_finished() -> void:
+	print(">>> ANIM: attack_animation_finished fired")
 	hitbox_component.deactivate()
 	attack.on_attack_finished()
 	animation.on_attack_finished() 

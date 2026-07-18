@@ -4,4 +4,6 @@
 
 [resource]
 script = ExtResource("1_lt4s4")
+walk_attack_force = 20.0
+run_attack_force = 40.0
 metadata/_custom_type_script = "uid://f5c1vij2unkf"

@@ -26,7 +26,7 @@
 size = Vector2(20, 42)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3gnei"]
-size = Vector2(68.571434, 74.28572)
+size = Vector2(118.57144, 65.714294)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2h25r"]
 size = Vector2(34.28572, 48.571438)
@@ -1356,7 +1356,7 @@ monitoring = false
 script = ExtResource("16_ow430")
 
 [node name="HitboxShape" type="CollisionShape2D" parent="HitboxComponent" unique_id=143076323]
-position = Vector2(0, 4.285714)
+position = Vector2(0.71428853, 6.81196e-07)
 shape = SubResource("RectangleShape2D_3gnei")
 disabled = true
 debug_color = Color(0.95661384, 0.17685363, 0.2968185, 0.41960785)
